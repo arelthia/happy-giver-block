@@ -1,0 +1,36 @@
+.happy-giver-edit-block { 
+	padding: 0 20px 20px;
+	border-radius: 2px;
+	border: 1px solid #d6d6d6;
+	background-color:  #f1f1f1;
+
+	p {
+		font-size: 13px;
+		margin: 20px 0 8px 0;
+	}
+
+	.single-amount {
+		padding: 10px;
+		border-radius: 2px;
+		border: 1px solid #eeeaee;
+		background-color:  #eeeadd;
+		margin-bottom: 10px;
+		.components-text-control__input {
+			/* border-color: red; */
+		}
+	}
+
+	.delete-amount, .delete-purpose {
+		color: #c20000;
+		position: relative;
+		top: -3px;
+		transition: transform 0.3s ease-out;
+
+		&:hover {
+			color: #ff0000;
+			transform: scale(1.25);
+		}
+	}
+
+
+}
