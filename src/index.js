@@ -7,8 +7,8 @@ wp.blocks.registerBlockType("happygiverblock/happy-giver", {
 	icon: "smiley",
 	category: "common",
 	attributes: {
-		amounts: {type: "array", default: ["15", "25", "50"]},
-		purposes: {type: "array", default: [undefined]},
+		amounts: {type: "array", default: [""]},
+		purposes: {type: "array", default: [""]},
 		allowCustom: {type: "boolean"}
 	},
 	edit: EditComponent,
@@ -44,7 +44,7 @@ function EditComponent (props) {
 					<Flex>
 						<FlexItem  className="single-amount" style={{textAlign: "center"}}>
 							<TextControl className="single-amount-text" autoFocus={amount == undefined} value={amount}   onChange={newValue => {
-								const newAmounts = props.attributes.amounts.concat([undefined])
+								const newAmounts = props.attributes.amounts.concat([])
 								newAmounts[index] = newValue
 								props.setAttributes({amounts: newAmounts})
 							}} />
@@ -73,7 +73,7 @@ function EditComponent (props) {
 					<Flex>
 						<FlexBlock>
 							<TextControl autoFocus={purpose == undefined} value={purpose} onChange={newValue => {
-								const newPurposes = props.attributes.purposes.concat(["undefined"])
+								const newPurposes = props.attributes.purposes.concat([])
 								newPurposes[index] = newValue
 								props.setAttributes({purposes: newPurposes})
 							}}/>
