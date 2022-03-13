@@ -15,12 +15,12 @@ happyGiverDivs.forEach(function(div){
 function HappyForm(props) {
 
 	return (
-		<div className="happy-giver-wrapper">
+		<div className="happy-giver-wrapper" style={{backgroundColor: props.bgColor}}>
 			<div className="amounts"  tabindex="1">
 				<div className="happy-giver-form-wrap amount_set">
 					<span className="happy-giver-radio" id="amount">
 						{props.amounts.map(function(amount, index) {
-							return <span className="happy-giver-list-item">
+							return <span className="happy-giver-list-item" style={{color: props.amountColor , backgroundColor: props.amountButtonColor , textAlign: "center"}}>
 							<label for={"amount" + amount}>
 							<input 
 							type="radio" 
@@ -34,8 +34,8 @@ function HappyForm(props) {
 						})}
 					</span>
 				</div>
-				<div className={props.allowCustom ? 'custom-group':'custom-group-hide'}>
-					<label for="happy-giver-amount-other">Custom</label>
+				<div className={props.allowCustom ? 'custom-group':'custom-group-hide'} >
+					<label for="happy-giver-amount-other" style={{color: props.amountColor , backgroundColor: props.amountButtonColor , textAlign: "center"}}>Custom</label>
 					<span className="amount_custom"><input type="number"  id="happy-giver-amount-other" autocomplete="off" tabindex="2" /></span>
 					
 				</div>
@@ -75,7 +75,7 @@ function HappyForm(props) {
 					<div className="happy-giver-form-wrap purpose_set">
 						<span className="happy-giver-radio" id="purpose">
 							{props.purposes.map(function(purpose) {
-			   					return <span className="happy-giver-list-item">
+			   					return <span className="happy-giver-list-item" style={{color: props.purposeColor , backgroundColor: props.purposeButtonColor , textAlign: "center"}}>
 						   					<label for={"purpose-" + purpose}>
 							   					<input type="radio" id={"purpose-" + purpose} className="happy-giver-purposes" name="happy-giver-purpose" value={purpose} />
 							   					<span className="happy-giver-list-item-label">{purpose}</span>

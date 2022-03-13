@@ -37,10 +37,11 @@ class HappyGiverBlock {
     function theHTML($attributes) {
         $options = get_option( 'happygivergeneral' );
         if( !is_admin()){
+            wp_dequeue_style( 'happy-giver' );
             wp_enqueue_script('happyGiverFrontEnd', plugin_dir_url(__FILE__). 'build/frontend.js', array('wp-element'), '2', false );
             wp_enqueue_style('happyGiverFrontEndStyles', plugin_dir_url(__FILE__). 'build/frontend.css');
         }
-        /*return '<div><p>How much you want to give?</p> <span>'. $attributes['giverAmount'] . '</span><p>What is the purpose?</p><span>' . $attributes['giverPurpose'] . '</span></div>';*/
+
         ob_start(); ?>
         <div id="giver_message" style="display:none;"></div>
         <form id="happy-giver-type-form">
@@ -58,10 +59,3 @@ class HappyGiverBlock {
 }
 
 $happyGiverBlock = new HappyGiverBlock();
-
-/**
- * amounts horizontal radio like custon
- * Information ??
- * Purpose horizontal radio like
- * Donate button
- */
