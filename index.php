@@ -38,7 +38,7 @@ class HappyGiverBlock {
         $options = get_option( 'happygivergeneral' );
         if( !is_admin()){
             wp_dequeue_style( 'happy-giver' );
-            wp_enqueue_script('happyGiverFrontEnd', plugin_dir_url(__FILE__). 'build/frontend.js', array('wp-element'), '2', false );
+            wp_enqueue_script('happyGiverFrontEnd', plugin_dir_url(__FILE__). 'build/frontend.js', array('wp-element'), '2.1', false );
             wp_enqueue_style('happyGiverFrontEndStyles', plugin_dir_url(__FILE__). 'build/frontend.css');
         }
 
